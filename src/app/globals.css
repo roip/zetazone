@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-sand: #e6d5a8;
+  --color-dust: #c4a96a;
+  --color-ember: #e8572a;
+  --color-night: #1a1028;
+  --color-playa: #f5edd6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-night);
+  color: var(--color-playa);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}

@@ -2,11 +2,24 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --color-sand: #e6d5a8;
-  --color-dust: #c4a96a;
-  --color-ember: #e8572a;
-  --color-night: #1a1028;
-  --color-playa: #f5edd6;
+
+  /* deep navy-indigo backgrounds (from logo outer rings) */
+  --color-night: #0f1a2e;
+  --color-deep: #152238;
+  --color-navy: #1b2d4a;
+
+  /* blue mid-tones (from logo concentric circles) */
+  --color-slate: #2a4a6b;
+  --color-dusk: #3b5f87;
+
+  /* warm golden-orange accents (from logo starburst & text) */
+  --color-ember: #e08a3a;
+  --color-glow: #d4a04a;
+  --color-flare: #e8622a;
+
+  /* light sand-gold for body text (from logo lettering) */
+  --color-sand: #e6c87a;
+  --color-playa: #f0dca0;
 }
 
 html {

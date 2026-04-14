@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const NAV_LINKS = [
@@ -12,17 +13,26 @@ export default function Home() {
   return (
     <>
       {/* ── Nav ── */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-night/80 border-b border-white/10">
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-night/85 border-b border-sand/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold tracking-wider text-ember">
-            ZETAZONE
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/site/2025-logo.jpg"
+              alt="ZetaZone logo"
+              width={36}
+              height={36}
+              className="rounded-full"
+            />
+            <span className="text-xl font-bold tracking-wider text-ember">
+              ZETAZONE
+            </span>
           </Link>
           <ul className="hidden gap-6 text-sm font-medium sm:flex">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href}>
                 <a
                   href={href}
-                  className="text-sand/80 transition-colors hover:text-ember"
+                  className="text-sand/70 transition-colors hover:text-ember"
                 >
                   {label}
                 </a>
@@ -34,8 +44,17 @@ export default function Home() {
 
       {/* ── Hero ── */}
       <section className="flex flex-1 flex-col items-center justify-center px-6 py-32 text-center">
-        <h1 className="text-5xl font-extrabold leading-tight tracking-tight sm:text-7xl">
-          <span className="text-ember">Zeta</span>Zone
+        <Image
+          src="/images/site/2025-logo.jpg"
+          alt="ZetaZone Camp logo"
+          width={180}
+          height={180}
+          className="rounded-full shadow-lg shadow-ember/20"
+          priority
+        />
+        <h1 className="mt-8 text-5xl font-extrabold leading-tight tracking-tight sm:text-7xl">
+          <span className="text-ember">Zeta</span>
+          <span className="text-playa">Zone</span>
         </h1>
         <p className="mt-4 max-w-xl text-lg text-sand/70">
           A Burning Man theme camp exploring art, sound, and community at the
@@ -44,7 +63,7 @@ export default function Home() {
         <div className="mt-8 flex gap-4">
           <a
             href="#about"
-            className="rounded-full bg-ember px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
+            className="rounded-full bg-ember px-6 py-3 text-sm font-semibold text-night transition-transform hover:scale-105"
           >
             Learn More
           </a>
@@ -58,52 +77,62 @@ export default function Home() {
       </section>
 
       {/* ── About ── */}
-      <section id="about" className="mx-auto max-w-4xl px-6 py-24">
-        <h2 className="text-3xl font-bold text-ember">About</h2>
-        <p className="mt-4 leading-relaxed text-sand/70">
-          ZetaZone is a theme camp at Burning Man dedicated to interactive art,
-          music, and radical self-expression. We build immersive installations,
-          host workshops, and create a welcoming space for burners of all
-          backgrounds.
-        </p>
+      <section id="about" className="bg-deep/50">
+        <div className="mx-auto max-w-4xl px-6 py-24">
+          <h2 className="text-3xl font-bold text-ember">About</h2>
+          <p className="mt-4 leading-relaxed text-sand/70">
+            ZetaZone is a theme camp at Burning Man dedicated to interactive
+            art, music, and radical self-expression. We build immersive
+            installations, host workshops, and create a welcoming space for
+            burners of all backgrounds.
+          </p>
+        </div>
       </section>
 
       {/* ── Gallery placeholder ── */}
-      <section id="gallery" className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-3xl font-bold text-ember">Camp Gallery</h2>
-        <p className="mt-4 text-sand/70">Photos and memories coming soon.</p>
+      <section id="gallery">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <h2 className="text-3xl font-bold text-ember">Camp Gallery</h2>
+          <p className="mt-4 text-sand/70">Photos and memories coming soon.</p>
+        </div>
       </section>
 
       {/* ── Projects placeholder ── */}
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-3xl font-bold text-ember">Projects</h2>
-        <p className="mt-4 text-sand/70">
-          Art installations and builds coming soon.
-        </p>
+      <section id="projects" className="bg-deep/50">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <h2 className="text-3xl font-bold text-ember">Projects</h2>
+          <p className="mt-4 text-sand/70">
+            Art installations and builds coming soon.
+          </p>
+        </div>
       </section>
 
       {/* ── Camp Notes placeholder ── */}
-      <section id="notes" className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-3xl font-bold text-ember">Camp Notes</h2>
-        <p className="mt-4 text-sand/70">Blog posts coming soon.</p>
+      <section id="notes">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <h2 className="text-3xl font-bold text-glow">Camp Notes</h2>
+          <p className="mt-4 text-sand/70">Blog posts coming soon.</p>
+        </div>
       </section>
 
       {/* ── Contact ── */}
-      <section id="contact" className="mx-auto max-w-4xl px-6 py-24">
-        <h2 className="text-3xl font-bold text-ember">Contact</h2>
-        <p className="mt-4 text-sand/70">
-          Want to join the camp or collaborate?{" "}
-          <a
-            href="mailto:hello@zetazone.org"
-            className="text-ember underline underline-offset-4 hover:text-sand"
-          >
-            hello@zetazone.org
-          </a>
-        </p>
+      <section id="contact" className="bg-deep/50">
+        <div className="mx-auto max-w-4xl px-6 py-24">
+          <h2 className="text-3xl font-bold text-ember">Contact</h2>
+          <p className="mt-4 text-sand/70">
+            Want to join the camp or collaborate?{" "}
+            <a
+              href="mailto:hello@zetazone.org"
+              className="text-glow underline underline-offset-4 hover:text-ember"
+            >
+              hello@zetazone.org
+            </a>
+          </p>
+        </div>
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-white/10 py-8 text-center text-xs text-sand/40">
+      <footer className="border-t border-sand/10 py-8 text-center text-xs text-sand/30">
         &copy; {new Date().getFullYear()} ZetaZone. Built with dust and love.
       </footer>
     </>

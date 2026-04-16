@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description:
     "ZetaZone is a Burning Man theme camp. Explore our gallery, projects, and camp notes.",
   metadataBase: new URL("https://zetazone.org"),
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "ZetaZone — Burning Man Camp",
     description:

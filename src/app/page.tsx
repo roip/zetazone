@@ -2,7 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Gallery, { type GalleryItem } from "@/components/Gallery";
 
-const CAMP_PHOTOS: GalleryItem[] = [];
+const CAMP_PHOTOS: GalleryItem[] = [
+  { src: "/images/gallery/camp/IMG_7873.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_7881.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_7892.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_7948.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_7985.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_7988.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_8225.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/PXL_20240826_015152568.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/PXL_20240826_064603005.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_3092.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_3106.jpg", alt: "Camp life" },
+  { src: "/images/gallery/camp/IMG_3259.jpg", alt: "Camp life" },
+];
 
 const PROJECT_PHOTOS: GalleryItem[] = [
   { src: "/images/gallery/projects/PXL_20250825_172147971.jpg", alt: "Project build" },
@@ -41,7 +54,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/site/2025-logo.jpg"
+              src="/images/site/hi-res.png"
               alt="ZetaZone logo"
               width={36}
               height={36}
@@ -69,7 +82,7 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="flex flex-1 flex-col items-center justify-center px-6 py-32 text-center">
         <Image
-          src="/images/site/2025-logo.jpg"
+          src="/images/site/hi-res.png"
           alt="ZetaZone Camp logo"
           width={180}
           height={180}

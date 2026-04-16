@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Gallery, { type GalleryItem } from "@/components/Gallery";
+import ProjectCard from "@/components/ProjectCard";
+import { getAllProjects } from "@/lib/projects";
 
 const CAMP_PHOTOS: GalleryItem[] = [
   { src: "/images/gallery/camp/IMG_7873.jpg", alt: "Camp life" },
@@ -15,27 +17,6 @@ const CAMP_PHOTOS: GalleryItem[] = [
   { src: "/images/gallery/camp/IMG_3092.jpg", alt: "Camp life" },
   { src: "/images/gallery/camp/IMG_3106.jpg", alt: "Camp life" },
   { src: "/images/gallery/camp/IMG_3259.jpg", alt: "Camp life" },
-];
-
-const PROJECT_PHOTOS: GalleryItem[] = [
-  { src: "/images/gallery/projects/PXL_20250825_172147971.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250825_200645725.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250826_060808794.MP.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250826_062516676.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250826_062828419.MP.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250826_065217757.MP.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250826_071848464.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250826_072512706.MP.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250826_084640715.MP.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_003304020.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_010125406.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_023011835.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_023421447.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_042813263.NIGHT.jpg", alt: "Night shot" },
-  { src: "/images/gallery/projects/PXL_20250828_043946287.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_044010213.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_044124077.jpg", alt: "Project build" },
-  { src: "/images/gallery/projects/PXL_20250828_044908255.jpg", alt: "Project build" },
 ];
 
 const NAV_LINKS = [
@@ -137,8 +118,10 @@ export default function Home() {
       <section id="projects" className="bg-deep/50">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <h2 className="text-3xl font-bold text-ember">Projects</h2>
-          <div className="mt-6">
-            <Gallery items={PROJECT_PHOTOS} columns={3} />
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {getAllProjects().map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
           </div>
         </div>
       </section>

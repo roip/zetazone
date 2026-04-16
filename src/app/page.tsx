@@ -1,5 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
+import Gallery, { type GalleryItem } from "@/components/Gallery";
+
+const CAMP_PHOTOS: GalleryItem[] = [];
+
+const PROJECT_PHOTOS: GalleryItem[] = [
+  { src: "/images/gallery/projects/PXL_20250825_172147971.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250825_200645725.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250826_060808794.MP.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250826_062516676.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250826_062828419.MP.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250826_065217757.MP.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250826_071848464.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250826_072512706.MP.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250826_084640715.MP.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_003304020.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_010125406.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_023011835.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_023421447.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_042813263.NIGHT.jpg", alt: "Night shot" },
+  { src: "/images/gallery/projects/PXL_20250828_043946287.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_044010213.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_044124077.jpg", alt: "Project build" },
+  { src: "/images/gallery/projects/PXL_20250828_044908255.jpg", alt: "Project build" },
+];
 
 const NAV_LINKS = [
   { href: "#about", label: "About" },
@@ -57,8 +81,7 @@ export default function Home() {
           <span className="text-playa">Zone</span>
         </h1>
         <p className="mt-4 max-w-xl text-lg text-sand/70">
-          A Burning Man theme camp exploring art, sound, and community at the
-          edge of the playa.
+          A Burning Man camp supporting art, sound, and community on the playa. 
         </p>
         <div className="mt-8 flex gap-4">
           <a
@@ -81,29 +104,29 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 py-24">
           <h2 className="text-3xl font-bold text-ember">About</h2>
           <p className="mt-4 leading-relaxed text-sand/70">
-            ZetaZone is a theme camp at Burning Man dedicated to interactive
-            art, music, and radical self-expression. We build immersive
-            installations, host workshops, and create a welcoming space for
-            burners of all backgrounds.
+            ZetaZone is an art support camp at Burning Man dedicated to interactive
+            art, music, and radical self-expression. 
           </p>
         </div>
       </section>
 
-      {/* ── Gallery placeholder ── */}
+      {/* ── Camp Gallery ── */}
       <section id="gallery">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <h2 className="text-3xl font-bold text-ember">Camp Gallery</h2>
-          <p className="mt-4 text-sand/70">Photos and memories coming soon.</p>
+          <div className="mt-6">
+            <Gallery items={CAMP_PHOTOS} columns={3} />
+          </div>
         </div>
       </section>
 
-      {/* ── Projects placeholder ── */}
+      {/* ── Projects ── */}
       <section id="projects" className="bg-deep/50">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <h2 className="text-3xl font-bold text-ember">Projects</h2>
-          <p className="mt-4 text-sand/70">
-            Art installations and builds coming soon.
-          </p>
+          <div className="mt-6">
+            <Gallery items={PROJECT_PHOTOS} columns={3} />
+          </div>
         </div>
       </section>
 

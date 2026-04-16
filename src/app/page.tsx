@@ -164,6 +164,36 @@ export default function Home() {
               hello@zetazone.org
             </a>
           </p>
+          <div className="mt-6 flex items-center gap-5">
+            <a
+              href="https://www.instagram.com/zetazonecamp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/images/site/ig.png"
+                alt="Instagram"
+                width={40}
+                height={40}
+                className="rounded"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/people/Camp-Zeta-Zone/61578113943712/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/images/site/fb.png"
+                alt="Facebook"
+                width={40}
+                height={40}
+                className="rounded"
+              />
+            </a>
+          </div>
         </div>
       </section>
 
